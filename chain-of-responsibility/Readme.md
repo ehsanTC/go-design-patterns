@@ -1,0 +1,7 @@
+In the ATM Dispense machine example, the user enters the amount to be dispensed and the machine dispenses the amount in terms of defined currency bills such as 50$, 20$, 10$ etc. If the user enters an amount that is not multiples of 10, it throws an error.
+
+The Chain of Responsibility pattern can be used to create a chain of objects that can handle the request. Each object in the chain has a reference to the next object in the chain. If one object cannot handle the request, it passes it on to the next object in the chain until an object handles it or until the end of the chain is reached.
+
+In this example, we can create a chain of currency dispensers that handle different currency bills such as 50$, 20$, 10$ etc. If a user enters an amount that is not multiples of 10, then the first dispenser in the chain will try to dispense currency bills of 50$. If it cannot dispense the full amount, it will pass on the request to the next dispenser in the chain which will try to dispense currency bills of 20$. If it still cannot dispense the full amount, it will pass on the request to the next dispenser in the chain which will try to dispense currency bills of 10$. If none of these dispensers can dispense the full amount, then an error will be thrown.
+
+To run the ATM dispenser, run the file **atm.go**
