@@ -2,7 +2,23 @@ package chain_of_responsibility
 
 import "fmt"
 
-func Work() {
+type ATM struct {
+	number int
+}
+
+func (A *ATM) Name() string {
+	return "Chain of responsibility"
+}
+
+func (A *ATM) Number() int {
+	return A.number
+}
+
+func (A *ATM) SetNumber(i int) {
+	A.number = i
+}
+
+func (A *ATM) Work() {
 	fmt.Println("\n*************** Thanks for using our ATM ***************")
 	fmt.Println("********* We have only 50, 20 and 10 dollar cash *********")
 

@@ -5,7 +5,23 @@ import (
 	"time"
 )
 
-func Work() {
+type Observer struct {
+	number int
+}
+
+func (o *Observer) Number() int {
+	return o.number
+}
+
+func (o *Observer) SetNumber(n int) {
+	o.number = n
+}
+
+func (o *Observer) Name() string {
+	return "Observer"
+}
+
+func (o *Observer) Work() {
 	farmer := &Farmer{lowerHumidity: 15, UpperHumidity: 60, workingState: true}
 	roofWorker := &RoofWorker{windSpeedThreshold: 10, workingState: true}
 	weatherStation := &WeatherStation{}
