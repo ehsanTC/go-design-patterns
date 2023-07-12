@@ -1,10 +1,10 @@
-package main
+package chain_of_responsibility
 
 import "fmt"
 
-func main() {
+func Work() {
 	fmt.Println("\n*************** Thanks for using our ATM ***************")
-	fmt.Println("** We have only 50, 20 and 10 dollar cash **")
+	fmt.Println("********* We have only 50, 20 and 10 dollar cash *********")
 
 	fmt.Print("\nHow much money do you want? ")
 	var deposit int = 15
@@ -26,10 +26,10 @@ func main() {
 	tenDollarsHandler.SetNext(notSupportedHandler)
 
 	depositProcessor.SetHandler(fiftyDollarsHandler)
-	d_err := depositProcessor.Process(deposit)
+	dErr := depositProcessor.Process(deposit)
 
-	if d_err != nil {
-		fmt.Printf("Error:%s\n", d_err)
+	if dErr != nil {
+		fmt.Printf("Error:%s\n", dErr)
 	} else {
 		fmt.Println("\nYour deposition was successful.")
 	}

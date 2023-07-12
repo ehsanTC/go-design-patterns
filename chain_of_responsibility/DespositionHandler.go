@@ -1,4 +1,4 @@
-package main
+package chain_of_responsibility
 
 type DepositionHandler interface {
 	SetNext(handler DepositionHandler) DepositionHandler
