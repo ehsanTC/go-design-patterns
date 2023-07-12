@@ -3,19 +3,15 @@ package chain_of_responsibility
 import "fmt"
 
 type ATM struct {
-	number int
+	Number int
 }
 
 func (A *ATM) Name() string {
 	return "Chain of responsibility"
 }
 
-func (A *ATM) Number() int {
-	return A.number
-}
-
-func (A *ATM) SetNumber(i int) {
-	A.number = i
+func (A *ATM) GetNumber() int {
+	return A.Number
 }
 
 func (A *ATM) Work() {

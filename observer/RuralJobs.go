@@ -6,15 +6,11 @@ import (
 )
 
 type Observer struct {
-	number int
+	Number int
 }
 
-func (o *Observer) Number() int {
-	return o.number
-}
-
-func (o *Observer) SetNumber(n int) {
-	o.number = n
+func (o *Observer) GetNumber() int {
+	return o.Number
 }
 
 func (o *Observer) Name() string {
